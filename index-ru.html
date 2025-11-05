@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OknaPro — Окна и двери под ключ</title>
+  <meta name="description" content="Moderní/Сучасні/Современные okna a dveře: zaměření/vymír, výroba, montáž.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230b6cff'/%3E%3Crect x='12' y='12' width='40' height='40' rx='3' fill='white'/%3E%3Cline x1='12' y1='32' x2='52' y2='32' stroke='%230b6cff' stroke-width='3'/%3E%3Cline x1='32' y1='12' x2='32' y2='52' stroke='%230b6cff' stroke-width='3'/%3E%3C/svg%3E">
+  <script defer src="app.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "OknaPro",
+    "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    "telephone": "+7 (800) 000-00-00",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "url": "https://example.com"
+  }
+  </script>
+
+  <!-- === SEO Inject START === -->
+  <link rel="canonical" href="https://example.com/index-ru.html">
+  <link rel="alternate" hreflang="cs" href="https://example.com/index.html">
+  <link rel="alternate" hreflang="uk" href="https://example.com/index-ua.html">
+  <link rel="alternate" hreflang="ru" href="https://example.com/index-ru.html">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/">
+
+  <meta property="og:title" content="OknaPro — Окна и двери под ключ">
+  <meta property="og:description" content="Современные окна и двери: замер, производство, монтаж. Бесплатный расчёт и гарантия.">
+  <meta property="og:image" content="https://example.com/preview.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/index-ru.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OknaPro — Окна и двери под ключ">
+  <meta name="twitter:description" content="Современные окна и двери: замер, производство, монтаж. Бесплатный расчёт и гарантия.">
+  <meta name="twitter:image" content="https://example.com/preview.jpg">
+  <!-- === SEO Inject END === -->
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar__row">
+      <div class="topbar__left">Работаем ежедневно 9:00–20:00</div>
+      <div class="topbar__right">
+        <a href="tel:+78000000000" class="link-phone">+7 (800) 000-00-00</a>
+        <a href="#contact" class="btn btn--xs btn--ghost">Заказать звонок</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__row">
+      <a class="logo" href="#">
+        <span class="logo__icon" aria-hidden="true">🪟</span>
+        <span class="logo__text">OknaPro</span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Главное меню">
+        <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="nav__bar"></span><span class="nav__bar"></span><span class="nav__bar"></span>
+          <span class="sr-only">Меню</span>
+        </button>
+        <ul class="nav__list" id="nav-list">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#calc">Калькулятор</a></li>
+          <li><a href="#gallery">Работы</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#steps">Как мы работаем</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--sm btn--primary" href="#calc">Бесплатный расчёт</a>
+      <div class="lang-switch">
+        <button data-lang="cs" class="">CZ</button>
+        <button data-lang="ua" class="">UA</button>
+        <button data-lang="ru" class="active">RU</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <h1>Пластиковые окна и двери <br><span class="accent">с гарантией 5 лет</span></h1>
+        <p>Замер за 24 часа, аккуратный монтаж и прозрачная смета. Рассрочка доступна.</p>
+        <div class="hero__actions">
+          <a href="#calc" class="btn btn--primary btn--lg">Рассчитать стоимость</a>
+          <a href="#gallery" class="btn btn--ghost btn--lg">Портфолио</a>
+        </div>
+        <ul class="badges">
+          <li>🚚 Бесплатный замер</li><li>🛡️ Сертифицированные профили</li><li>🧰 Чистый монтаж</li>
+        </ul>
+      </div>
+      <div class="hero__media">
+        <img src="https://images.unsplash.com/photo-1505692794403-34cb200ce18d?q=80&w=1200&auto=format&fit=crop" alt="Okno" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <ul class="cards">
+        <li class="card"><div class="card__icon" aria-hidden="true">🏷️</div><h3 class="card__title">Честная цена</h3><p class="card__text">Без скрытых доплат — всё в договоре.</p></li><li class="card"><div class="card__icon" aria-hidden="true">⏱️</div><h3 class="card__title">Сроки от 5 дней</h3><p class="card__text">Собственное производство и логистика.</p></li><li class="card"><div class="card__icon" aria-hidden="true">🌡️</div><h3 class="card__title">Тепло и тишина</h3><p class="card__text">Энергоэффективные стеклопакеты и уплотнение.</p></li><li class="card"><div class="card__icon" aria-hidden="true">🧼</div><h3 class="card__title">Чистый монтаж</h3><p class="card__text">Минимум пыли, уборка после работ.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section__title">Услуги</h2>
+      <div class="grid grid--3">
+        <article class="service"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1200&auto=format&fit=crop" alt="Пластиковые окна"><h3>Пластиковые окна</h3><p>Профили класса А, стеклопакеты 32–40 мм, фурнитура премиум.</p></article><article class="service"><img src="https://images.unsplash.com/photo-1608156639585-b3a032ef407f?q=80&w=1200&auto=format&fit=crop" alt="Балконы и лоджии"><h3>Балконы и лоджии</h3><p>Остекление, утепление, вынос, крыши и отделка «под ключ».</p></article><article class="service"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Двери ПВХ"><h3>Двери ПВХ</h3><p>Входные группы, межкомнатные и раздвижные системы.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator (simple demo form) -->
+  <section class="section section--alt" id="calc">
+    <div class="container">
+      <h2 class="section__title">Быстрый расчёт</h2>
+      <form class="calc" onsubmit="event.preventDefault(); alert('Спасибо! Заявка отправлена.');">
+        <div class="calc__row">
+          <label>Тип изделия
+            <select required>
+              <option value="">Выберите...</option>
+              <option>Окно</option>
+              <option>Балконный блок</option>
+              <option>Дверь</option>
+            </select>
+          </label>
+          <label>Ширина, мм
+            <input type="number" min="400" max="3000" placeholder="1200" required>
+          </label>
+          <label>Высота, мм
+            <input type="number" min="400" max="3000" placeholder="1400" required>
+          </label>
+          <label>Телефон
+            <input type="tel" placeholder="+7 (___) ___-__-__" required>
+          </label>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <h2 class="section__title">Наши работы</h2>
+      <div class="masonry">
+        <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1200&auto=format&fit=crop" alt="1">
+        <img src="https://images.unsplash.com/photo-1582582494700-41299be2ef1e?q=80&w=1200&auto=format&fit=crop" alt="2">
+        <img src="https://images.unsplash.com/photo-1505692794403-34cb200ce18d?q=80&w=1200&auto=format&fit=crop" alt="3">
+        <img src="https://images.unsplash.com/photo-1560184897-67f8422ba6a7?q=80&w=1200&auto=format&fit=crop" alt="4">
+        <img src="https://images.unsplash.com/photo-1560184898-44a58052f569?q=80&w=1200&auto=format&fit=crop" alt="5">
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section section--alt" id="reviews">
+    <div class="container">
+      <h2 class="section__title">Отзывы</h2>
+      <div class="slider" data-slider>
+        <div class="slide"><blockquote>“Сделали быстро и аккуратно. В квартире стало тише и теплее.”<footer>— Анна, Москва</footer></blockquote></div><div class="slide"><blockquote>“Хорошая цена за качественные окна. Рекомендую знакомым.”<footer>— Дмитрий, Балашиха</footer></blockquote></div><div class="slide"><blockquote>“Монтажники убрали за собой, всё по договору.”<footer>— Ирина, Химки</footer></blockquote></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section" id="steps">
+    <div class="container">
+      <h2 class="section__title">Как мы работаем</h2>
+      <ol class="steps">
+        <li><strong>Заявка.</strong> Оставляете контакты — перезвоним за 10 минут.</li><li><strong>Замер.</strong> Мастер приедет в удобное время, учтёт нюансы.</li><li><strong>Производство.</strong> Изготовление по размеру — 3–7 рабочих дней.</li><li><strong>Монтаж.</strong> Аккуратная установка и вынос мусора.</li><li><strong>Гарантия.</strong> 5 лет на изделия и монтаж.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section--alt" id="contact">
+    <div class="container contact">
+      <div class="contact__info">
+        <h2 class="section__title">Связаться с нами</h2>
+        <p>Позвоните или оставьте заявку — проконсультируем и рассчитаем стоимость.</p>
+        <p><a class="link-phone" href="tel:+78000000000">+7 (800) 000-00-00</a><br>
+        Москва, пр-т Примерный, 1</p>
+      </div>
+      <form class="contact__form" onsubmit="event.preventDefault(); alert('Спасибо! Заявка отправлена.');">
+        <label>Имя
+          <input type="text" required placeholder="Ваше имя">
+        </label>
+        <label>Телефон
+          <input type="tel" required placeholder="+7 (___) ___-__-__">
+        </label>
+        <label>Комментарий
+          <textarea rows="4" placeholder="Опишите задачу"></textarea>
+        </label>
+        <button class="btn btn--primary btn--lg" type="submit">Отправить заявку</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="logo logo--footer" href="#">
+          <span class="logo__icon" aria-hidden="true">🪟</span>
+          <span class="logo__text">OknaPro</span>
+        </a>
+        <p class="muted">© 2025 OknaPro. Все права защищены.</p>
+      </div>
+      <div>
+        <h4>Навигация</h4>
+        <ul class="list">
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#calc">Калькулятор</a></li>
+          <li><a href="#gallery">Работы</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Документы</h4>
+        <ul class="list">
+          <li><a href="#">Политика конфиденциальности</a></li>
+          <li><a href="#">Пользовательское соглашение</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <button class="scrolltop" id="scrolltop" aria-label="Наверх">↑</button>
+
+  <div class="sr-only" id="sr-live" aria-live="polite"></div>
+</body>
+</html>

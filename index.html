@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OknaPro — Okna a dveře na klíč</title>
+  <meta name="description" content="Moderní/Сучасні/Современные okna a dveře: zaměření/vymír, výroba, montáž.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230b6cff'/%3E%3Crect x='12' y='12' width='40' height='40' rx='3' fill='white'/%3E%3Cline x1='12' y1='32' x2='52' y2='32' stroke='%230b6cff' stroke-width='3'/%3E%3Cline x1='32' y1='12' x2='32' y2='52' stroke='%230b6cff' stroke-width='3'/%3E%3C/svg%3E">
+  <script defer src="app.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "OknaPro",
+    "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    "telephone": "+420 800 000 000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Praha",
+      "addressCountry": "CZ"
+    },
+    "url": "https://example.com"
+  }
+  </script>
+
+  <!-- === SEO Inject START === -->
+  <link rel="canonical" href="https://example.com/index.html">
+  <link rel="alternate" hreflang="cs" href="https://example.com/index.html">
+  <link rel="alternate" hreflang="uk" href="https://example.com/index-ua.html">
+  <link rel="alternate" hreflang="ru" href="https://example.com/index-ru.html">
+  <link rel="alternate" hreflang="x-default" href="https://example.com/">
+
+  <meta property="og:title" content="OknaPro — Okna a dveře na klíč">
+  <meta property="og:description" content="Moderní okna a dveře: zaměření, výroba, montáž. Nezávazná kalkulace a záruka.">
+  <meta property="og:image" content="https://example.com/preview.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/index.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OknaPro — Okna a dveře na klíč">
+  <meta name="twitter:description" content="Moderní okna a dveře: zaměření, výroba, montáž. Nezávazná kalkulace a záruka.">
+  <meta name="twitter:image" content="https://example.com/preview.jpg">
+  <!-- === SEO Inject END === -->
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar__row">
+      <div class="topbar__left">Otevřeno denně 9:00–20:00</div>
+      <div class="topbar__right">
+        <a href="tel:+420800000000" class="link-phone">+420 800 000 000</a>
+        <a href="#contact" class="btn btn--xs btn--ghost">Zavolat zpět</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__row">
+      <a class="logo" href="#">
+        <span class="logo__icon" aria-hidden="true">🪟</span>
+        <span class="logo__text">OknaPro</span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Hlavní menu">
+        <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+          <span class="nav__bar"></span><span class="nav__bar"></span><span class="nav__bar"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <ul class="nav__list" id="nav-list">
+          <li><a href="#services">Služby</a></li>
+          <li><a href="#calc">Kalkulace</a></li>
+          <li><a href="#gallery">Realizace</a></li>
+          <li><a href="#reviews">Recenze</a></li>
+          <li><a href="#steps">Jak pracujeme</a></li>
+          <li><a href="#contact">Kontakty</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--sm btn--primary" href="#calc">Nezávazná kalkulace</a>
+      <div class="lang-switch">
+        <button data-lang="cs" class="active">CZ</button>
+        <button data-lang="ua" class="">UA</button>
+        <button data-lang="ru" class="">RU</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <h1>Plastová okna a dveře <br><span class="accent">se zárukou 5 let</span></h1>
+        <p>Zaměření do 24 hodin, čistá montáž a férová cenová nabídka. Možnost splátek.</p>
+        <div class="hero__actions">
+          <a href="#calc" class="btn btn--primary btn--lg">Spočítat cenu</a>
+          <a href="#gallery" class="btn btn--ghost btn--lg">Portfolio</a>
+        </div>
+        <ul class="badges">
+          <li>🚚 Bezplatné zaměření</li><li>🛡️ Certifikované profily</li><li>🧰 Po sobě uklízíme</li>
+        </ul>
+      </div>
+      <div class="hero__media">
+        <img src="https://images.unsplash.com/photo-1505692794403-34cb200ce18d?q=80&w=1200&auto=format&fit=crop" alt="Okno" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <ul class="cards">
+        <li class="card"><div class="card__icon" aria-hidden="true">🏷️</div><h3 class="card__title">Poctivá cena</h3><p class="card__text">Bez skrytých poplatků — vše je ve smlouvě.</p></li><li class="card"><div class="card__icon" aria-hidden="true">⏱️</div><h3 class="card__title">Termíny od 5 dnů</h3><p class="card__text">Vlastní výroba a logistika.</p></li><li class="card"><div class="card__icon" aria-hidden="true">🌡️</div><h3 class="card__title">Teplo a ticho</h3><p class="card__text">Energeticky úsporná izolační skla a těsnění.</p></li><li class="card"><div class="card__icon" aria-hidden="true">🧼</div><h3 class="card__title">Čistá montáž</h3><p class="card__text">Minimum prachu, úklid po práci.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section__title">Služby</h2>
+      <div class="grid grid--3">
+        <article class="service"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1200&auto=format&fit=crop" alt="Plastová okna"><h3>Plastová okna</h3><p>Profily třídy A, izolační skla 32–40 mm, prémiové kování.</p></article><article class="service"><img src="https://images.unsplash.com/photo-1608156639585-b3a032ef407f?q=80&w=1200&auto=format&fit=crop" alt="Balkony a lodžie"><h3>Balkony a lodžie</h3><p>Zasklení, zateplení, výnos, střechy a dokončení „na klíč“.</p></article><article class="service"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Dveře z PVC"><h3>Dveře z PVC</h3><p>Vstupní sestavy, interiérové i posuvné systémy.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator (simple demo form) -->
+  <section class="section section--alt" id="calc">
+    <div class="container">
+      <h2 class="section__title">Rychlá kalkulace</h2>
+      <form class="calc" onsubmit="event.preventDefault(); alert('Poptávka byla odeslána!');">
+        <div class="calc__row">
+          <label>Typ výrobku
+            <select required>
+              <option value="">Vyberte…</option>
+              <option>Okno</option>
+              <option>Balkonový blok</option>
+              <option>Dveře</option>
+            </select>
+          </label>
+          <label>Šířka, mm
+            <input type="number" min="400" max="3000" placeholder="1200" required>
+          </label>
+          <label>Výška, mm
+            <input type="number" min="400" max="3000" placeholder="1400" required>
+          </label>
+          <label>Telefon
+            <input type="tel" placeholder="+420 ___ ___ ___" required>
+          </label>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg">Odeslat</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <h2 class="section__title">Naše realizace</h2>
+      <div class="masonry">
+        <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1200&auto=format&fit=crop" alt="1">
+        <img src="https://images.unsplash.com/photo-1582582494700-41299be2ef1e?q=80&w=1200&auto=format&fit=crop" alt="2">
+        <img src="https://images.unsplash.com/photo-1505692794403-34cb200ce18d?q=80&w=1200&auto=format&fit=crop" alt="3">
+        <img src="https://images.unsplash.com/photo-1560184897-67f8422ba6a7?q=80&w=1200&auto=format&fit=crop" alt="4">
+        <img src="https://images.unsplash.com/photo-1560184898-44a58052f569?q=80&w=1200&auto=format&fit=crop" alt="5">
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section section--alt" id="reviews">
+    <div class="container">
+      <h2 class="section__title">Recenze</h2>
+      <div class="slider" data-slider>
+        <div class="slide"><blockquote>“Práce byla rychlá a čistá. V bytě je tepleji a větší klid.”<footer>— Anna, Praha</footer></blockquote></div><div class="slide"><blockquote>“Skvělá cena za kvalitní okna. Doporučuji známým.”<footer>— Dmitrij, Kladno</footer></blockquote></div><div class="slide"><blockquote>“Montážníci po sobě uklidili, vše dle smlouvy.”<footer>— Irena, Říčany</footer></blockquote></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="section" id="steps">
+    <div class="container">
+      <h2 class="section__title">Jak postupujeme</h2>
+      <ol class="steps">
+        <li><strong>Poptávka.</strong> Zanecháte kontakt — voláme do 10 minut.</li><li><strong>Zaměření.</strong> Technik přijede v domluveném čase a poradí.</li><li><strong>Výroba.</strong> Zakázka na míru — 3–7 pracovních dní.</li><li><strong>Montáž.</strong> Precizní instalace a odvoz odpadu.</li><li><strong>Záruka.</strong> 5 let na výrobky i montáž.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section--alt" id="contact">
+    <div class="container contact">
+      <div class="contact__info">
+        <h2 class="section__title">Kontaktujte nás</h2>
+        <p>Zavolejte nebo odešlete poptávku — poradíme a připravíme cenovou nabídku.</p>
+        <p><a class="link-phone" href="tel:+420800000000">+420 800 000 000</a><br>
+        Praha, Ukázková 1</p>
+      </div>
+      <form class="contact__form" onsubmit="event.preventDefault(); alert('Poptávka byla odeslána!');">
+        <label>Jméno
+          <input type="text" required placeholder="Vaše jméno">
+        </label>
+        <label>Telefon
+          <input type="tel" required placeholder="+420 ___ ___ ___">
+        </label>
+        <label>Zpráva
+          <textarea rows="4" placeholder="Stručně popište zakázku"></textarea>
+        </label>
+        <button class="btn btn--primary btn--lg" type="submit">Odeslat poptávku</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <a class="logo logo--footer" href="#">
+          <span class="logo__icon" aria-hidden="true">🪟</span>
+          <span class="logo__text">OknaPro</span>
+        </a>
+        <p class="muted">© 2025 OknaPro. Všechna práva vyhrazena.</p>
+      </div>
+      <div>
+        <h4>Služby</h4>
+        <ul class="list">
+          <li><a href="#services">Služby</a></li>
+          <li><a href="#calc">Kalkulace</a></li>
+          <li><a href="#gallery">Realizace</a></li>
+          <li><a href="#contact">Kontakty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dokumenty</h4>
+        <ul class="list">
+          <li><a href="#">Zásady ochrany osobních údajů</a></li>
+          <li><a href="#">Obchodní podmínky</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <button class="scrolltop" id="scrolltop" aria-label="Nahoru">↑</button>
+
+  <div class="sr-only" id="sr-live" aria-live="polite"></div>
+</body>
+</html>
