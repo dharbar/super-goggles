@@ -50,10 +50,76 @@ img{max-width:100%;display:block;border-radius:12px}
 .btn--primary:hover{background:var(--primary-600)}
 .btn--ghost{background:#fff}
 
-/* Language switcher */
-.lang-switch{display:flex; gap:6px; margin-left:12px}
-.lang-switch button{border:1px solid #dbe3ef; background:#fff; padding:6px 10px; border-radius:8px; cursor:pointer; font-weight:700; color:#111}
-.lang-switch button.active,.lang-switch button:hover{background:var(--primary); color:#fff; border-color:var(--primary)}
+/* Language switcher - NEW DROPDOWN STYLES */
+.language-switcher {
+    position: relative;
+    z-index: 50; /* Должен быть выше шапки, но ниже меню на мобильном */
+    margin-left: 12px;
+}
+.lang-toggle {
+    border: 1px solid #dbe3ef;
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #111;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    display: block; /* Важно для корректного отображения */
+}
+.lang-toggle:hover {
+    border-color: var(--primary);
+}
+.lang-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 60px;
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    
+    /* Анимация: по умолчанию скрыто */
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px); 
+    transition: 
+        max-height 0.3s ease-out,
+        opacity 0.2s ease-in-out,
+        transform 0.2s ease-in-out;
+}
+.lang-list.is-open {
+    max-height: 200px; /* Достаточная высота для раскрытия */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.lang-list li {
+    padding: 0;
+    margin: 0;
+}
+.lang-item {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #111;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+.lang-item:hover {
+    background-color: var(--surface);
+}
+.lang-item.active {
+    background-color: var(--primary);
+    color: #fff;
+}
+/* End Language switcher styles */
 
 /* Hero */
 .hero{padding:48px 0 24px}
@@ -139,80 +205,4 @@ blockquote footer{margin-top:.6rem; color:var(--muted)}
   .cards{grid-template-columns:1fr}
   .grid--3{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
-}
-
-/* === Mobile language switch overflow fix === */
-.nav{flex:1; min-width:0}
-.header__row{flex-wrap:nowrap}
-@media (max-width: 640px){
-  .header__row{flex-wrap:wrap}
-  /* Hide header CTA on very small screens (we have sticky CTA below) */
-  .header .btn--sm{display:none}
-  .lang-switch{
-    order:3;
-    width:100%;
-    display:flex;
-    gap:4px;
-    justify-content:flex-start;
-    overflow-x:auto;
-    -webkit-overflow-scrolling: touch;
-    padding:6px 0 2px;
-  }
-  .lang-switch button{
-    padding:6px 8px;
-    font-size:.85rem;
-    white-space:nowrap;
-    flex:0 0 auto;
-  }
-  .logo{flex:1}
-}
-
-
-
-/* === Mobile Lang Dropdown === */
-@media (max-width: 640px){
-  .lang-switch{ position: relative; order:3; }
-  /* Hide original inline buttons on mobile */
-  .lang-switch button{ display:none; }
-  /* Show only the injected toggle */
-  .lang-switch .lang-toggle{ 
-    display:inline-flex; 
-    align-items:center; 
-    gap:6px; 
-    padding:8px 10px; 
-    border:1px solid var(--border);
-    border-radius:8px; 
-    background:#fff; 
-    font-weight:800; 
-  }
-  .lang-switch .lang-toggle:after{ content:"▾"; font-size:.9rem; }
-  .lang-switch .lang-menu{
-    display:none;
-    position:absolute;
-    top:calc(100% + 6px);
-    right:0;
-    min-width:160px;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:12px;
-    box-shadow:var(--shadow);
-    padding:6px;
-    z-index:100;
-  }
-  .lang-switch.open .lang-menu{ display:block; }
-  .lang-switch .lang-menu button{
-    display:block;
-    width:100%;
-    text-align:left;
-    padding:10px 12px;
-    border:0;
-    background:#fff;
-    border-radius:8px;
-    margin:2px 0;
-    font-weight:800;
-  }
-  .lang-switch .lang-menu button.active,
-  .lang-switch .lang-menu button:hover{
-    background:var(--surface);
-  }
 }
