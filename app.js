@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollTop = document.getElementById('scrolltop');
   const live      = document.getElementById('sr-live');
 
+  // Existing Nav Toggle Logic
   if (navToggle) {
     navToggle.addEventListener('click', () => {
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -36,64 +37,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Language switcher (static pages)
-  document.querySelectorAll('.lang-switch button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
+  // --- NEW LANGUAGE SWITCHER LOGIC ---
+  const langToggle = document.querySelector('.lang-toggle');
+  const langList = document.querySelector('.lang-list');
+  const langSwitcher = document.querySelector('.language-switcher');
+  
+  if (langToggle && langList) {
+    // 1. Dropdown Toggle Functionality
+    function toggleLangMenu() {
+        // Проверяем, открыто ли меню навигации, и если да, закрываем его для UX
+        if (navList && navList.classList.contains('show')) {
+             navList.classList.remove('show');
+             if (navToggle) navToggle.setAttribute('aria-expanded','false');
+        }
+
+        const isExpanded = langToggle.getAttribute('aria-expanded') === 'true';
+        langToggle.setAttribute('aria-expanded', String(!isExpanded));
+        langList.classList.toggle('is-open');
+    }
+
+    langToggle.addEventListener('click', toggleLangMenu);
+
+    // 2. Close dropdown on outside click
+    document.addEventListener('click', function(event) {
+        const isClickInside = langSwitcher.contains(event.target);
+
+        if (!isClickInside && langList.classList.contains('is-open')) {
+            toggleLangMenu(); 
+        }
+    });
+  }
+
+  // 3. Language switcher (static pages) - ADAPTED TO NEW A TAGS
+  document.querySelectorAll('.lang-item').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault(); 
+      
+      const lang = a.dataset.lang;
+      
       if (lang === 'cs') window.location.href = 'index.html';
       if (lang === 'ua') window.location.href = 'index-ua.html';
       if (lang === 'ru') window.location.href = 'index-ru.html';
     });
   });
+  // --- END NEW LANGUAGE SWITCHER LOGIC ---
 });
-
-/* Mobile language dropdown injected */
-
-  // Mobile language dropdown
-  (function(){
-    const wrap = document.querySelector('.lang-switch');
-    if(!wrap) return;
-    const btns = Array.from(wrap.querySelectorAll('button[data-lang]'));
-    if(btns.length === 0) return;
-    // Detect current language from .active
-    const current = (btns.find(b => b.classList.contains('active'))?.textContent || 'LANG').trim();
-    // Create toggle + dropdown container
-    const toggle = document.createElement('button');
-    toggle.className = 'lang-toggle';
-    toggle.type = 'button';
-    toggle.setAttribute('aria-expanded','false');
-    toggle.innerHTML = '🌐 ' + current;
-    const menu = document.createElement('div');
-    menu.className = 'lang-menu';
-    // Move clones of existing buttons into menu (preserve data-lang)
-    btns.forEach(b => {
-      const item = document.createElement('button');
-      item.type = 'button';
-      item.dataset.lang = b.dataset.lang;
-      item.textContent = b.textContent;
-      if (b.classList.contains('active')) item.classList.add('active');
-      item.addEventListener('click', () => {
-        const lang = item.dataset.lang;
-        if (lang === 'cs') window.location.href = 'index.html';
-        if (lang === 'ua' || lang === 'uk') window.location.href = 'index-ua.html';
-        if (lang === 'ru') window.location.href = 'index-ru.html';
-      });
-      menu.appendChild(item);
-    });
-    // Insert into DOM
-    wrap.appendChild(toggle);
-    wrap.appendChild(menu);
-    // Toggle open/close on mobile
-    const open = () => { wrap.classList.add('open'); toggle.setAttribute('aria-expanded','true'); };
-    const close = () => { wrap.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); };
-    toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (wrap.classList.contains('open')) close(); else open();
-    });
-    document.addEventListener('click', () => close());
-    // Accessibility: close on Escape
-    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') close(); });
-
-    // Desktop: keep original inline buttons visible; the CSS hides them only on mobile
-  })();
-
