@@ -27,7 +27,6 @@
   }
   </script>
 
-  <!-- === SEO Inject START === -->
   <link rel="canonical" href="https://example.com/index-ua.html">
   <link rel="alternate" hreflang="cs" href="https://example.com/index.html">
   <link rel="alternate" hreflang="uk" href="https://example.com/index-ua.html">
@@ -44,10 +43,8 @@
   <meta name="twitter:title" content="OknaPro — Вікна та двері під ключ">
   <meta name="twitter:description" content="Сучасні вікна та двері: замір, виробництво, монтаж. Безкоштовний розрахунок і гарантія.">
   <meta name="twitter:image" content="https://example.com/preview.jpg">
-  <!-- === SEO Inject END === -->
-</head>
+  </head>
 <body>
-  <!-- Topbar -->
   <div class="topbar">
     <div class="container topbar__row">
       <div class="topbar__left">Працюємо щодня 9:00–20:00</div>
@@ -58,7 +55,6 @@
     </div>
   </div>
 
-  <!-- Header -->
   <header class="header">
     <div class="container header__row">
       <a class="logo" href="#">
@@ -80,15 +76,19 @@
         </ul>
       </nav>
       <a class="btn btn--sm btn--primary" href="#calc">Безкоштовний розрахунок</a>
-      <div class="lang-switch">
-        <button data-lang="cs" class="">CZ</button>
-        <button data-lang="ua" class="active">UA</button>
-        <button data-lang="ru" class="">RU</button>
+      <div class="language-switcher">
+        <button class="lang-toggle" aria-expanded="false" aria-controls="lang-list">
+          UA
+        </button>
+        <ul class="lang-list" id="lang-list">
+          <li><a href="index.html" class="lang-item" data-lang="cs">CZ</a></li>
+          <li><a href="index-ua.html" class="lang-item active" data-lang="ua">UA</a></li>
+          <li><a href="index-ru.html" class="lang-item" data-lang="ru">RU</a></li>
+        </ul>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero">
     <div class="container hero__grid">
       <div class="hero__content">
@@ -108,7 +108,6 @@
     </div>
   </section>
 
-  <!-- Benefits -->
   <section class="benefits">
     <div class="container">
       <ul class="cards">
@@ -117,7 +116,6 @@
     </div>
   </section>
 
-  <!-- Services -->
   <section class="section" id="services">
     <div class="container">
       <h2 class="section__title">Послуги</h2>
@@ -127,7 +125,6 @@
     </div>
   </section>
 
-  <!-- Calculator (simple demo form) -->
   <section class="section section--alt" id="calc">
     <div class="container">
       <h2 class="section__title">Швидкий розрахунок</h2>
@@ -156,7 +153,6 @@
     </div>
   </section>
 
-  <!-- Gallery -->
   <section class="section" id="gallery">
     <div class="container">
       <h2 class="section__title">Наші роботи</h2>
@@ -170,7 +166,6 @@
     </div>
   </section>
 
-  <!-- Reviews -->
   <section class="section section--alt" id="reviews">
     <div class="container">
       <h2 class="section__title">Відгуки</h2>
@@ -180,7 +175,6 @@
     </div>
   </section>
 
-  <!-- Steps -->
   <section class="section" id="steps">
     <div class="container">
       <h2 class="section__title">Як ми працюємо</h2>
@@ -190,7 +184,6 @@
     </div>
   </section>
 
-  <!-- Contact -->
   <section class="section section--alt" id="contact">
     <div class="container contact">
       <div class="contact__info">
@@ -214,7 +207,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__grid">
       <div>
