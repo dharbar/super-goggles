@@ -17,7 +17,7 @@
     "@type": "LocalBusiness",
     "name": "OknaPro",
     "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
-    "telephone": "+420 000 000 000",
+    "telephone": "+420 800 000 000",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Praha",
@@ -76,15 +76,10 @@
         </ul>
       </nav>
       <a class="btn btn--sm btn--primary" href="#calc">Nezávazná kalkulace</a>
-      <div class="language-switcher">
-        <button class="lang-toggle" aria-expanded="false" aria-controls="lang-list">
-          CZ 
-        </button>
-        <ul class="lang-list" id="lang-list">
-          <li><a href="index.html" class="lang-item active" data-lang="cs">CZ</a></li>
-          <li><a href="index-ua.html" class="lang-item" data-lang="ua">UA</a></li>
-          <li><a href="index-ru.html" class="lang-item" data-lang="ru">RU</a></li>
-        </ul>
+      <div class="lang-switch">
+        <button data-lang="cs" class="active">CZ</button>
+        <button data-lang="ua" class="">UA</button>
+        <button data-lang="ru" class="">RU</button>
       </div>
     </div>
   </header>
@@ -103,139 +98,4 @@
         </ul>
       </div>
       <div class="hero__media">
-        <img src="https://images.unsplash.com/photo-1505692794403-34cb200ce18d?q=80&w=1200&auto=format&fit=crop" alt="Okno" loading="eager">
-      </div>
-    </div>
-  </section>
-
-  <section class="benefits">
-    <div class="container">
-      <ul class="cards">
-        <li class="card"><div class="card__icon" aria-hidden="true">🏷️</div><h3 class="card__title">Poctivá cena</h3><p class="card__text">Bez skrytých poplatků — vše je ve smlouvě.</p></li><li class="card"><div class="card__icon" aria-hidden="true">⏱️</div><h3 class="card__title">Termíny od 5 dnů</h3><p class="card__text">Vlastní výroba a logistika.</p></li><li class="card"><div class="card__icon" aria-hidden="true">🌡️</div><h3 class="card__title">Teplo a ticho</h3><p class="card__text">Energeticky úsporná izolační skla a těsnění.</p></li><li class="card"><div class="card__icon" aria-hidden="true">🧼</div><h3 class="card__title">Čistá montáž</h3><p class="card__text">Minimum prachu, úklid po práci.</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" id="services">
-    <div class="container">
-      <h2 class="section__title">Služby</h2>
-      <div class="grid grid--3">
-        <article class="service"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1200&auto=format&fit=crop" alt="Plastová okna"><h3>Plastová okna</h3><p>Profily třídy A, izolační skla 32–40 mm, prémiové kování.</p></article><article class="service"><img src="https://images.unsplash.com/photo-1608156639585-b3a032ef407f?q=80&w=1200&auto=format&fit=crop" alt="Balkony a lodžie"><h3>Balkony a lodžie</h3><p>Zasklení, zateplení, výnos, střechy a dokončení „na klíč“.</p></article><article class="service"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Dveře z PVC"><h3>Dveře z PVC</h3><p>Vstupní sestavy, interiérové i posuvné systémy.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="calc">
-    <div class="container">
-      <h2 class="section__title">Rychlá kalkulace</h2>
-      <form class="calc" onsubmit="event.preventDefault(); alert('Poptávka byla odeslána!');">
-        <div class="calc__row">
-          <label>Typ výrobku
-            <select required>
-              <option value="">Vyberte…</option>
-              <option>Okno</option>
-              <option>Balkonový blok</option>
-              <option>Dveře</option>
-            </select>
-          </label>
-          <label>Šířka, mm
-            <input type="number" min="400" max="3000" placeholder="1200" required>
-          </label>
-          <label>Výška, mm
-            <input type="number" min="400" max="3000" placeholder="1400" required>
-          </label>
-          <label>Telefon
-            <input type="tel" placeholder="+420 ___ ___ ___" required>
-          </label>
-        </div>
-        <button type="submit" class="btn btn--primary btn--lg">Odeslat</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="section" id="gallery">
-    <div class="container">
-      <h2 class="section__title">Naše realizace</h2>
-      <div class="masonry">
-        <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1200&auto=format&fit=crop" alt="1">
-        <img src="https://images.unsplash.com/photo-1582582494700-41299be2ef1e?q=80&w=1200&auto=format&fit=crop" alt="2">
-        <img src="https://images.unsplash.com/photo-1505692794403-34cb200ce18d?q=80&w=1200&auto=format&fit=crop" alt="3">
-        <img src="https://images.unsplash.com/photo-1560184897-67f8422ba6a7?q=80&w=1200&auto=format&fit=crop" alt="4">
-        <img src="https://images.unsplash.com/photo-1560184898-44a58052f569?q=80&w=1200&auto=format&fit=crop" alt="5">
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="reviews">
-    <div class="container">
-      <h2 class="section__title">Recenze</h2>
-      <div class="slider" data-slider>
-        <div class="slide"><blockquote>“Práce byla rychlá a čistá. V bytě je tepleji a větší klid.”<footer>— Anna, Praha</footer></blockquote></div><div class="slide"><blockquote>“Skvělá cena za kvalitní okna. Doporučuji známým.”<footer>— Dmitrij, Kladno</footer></blockquote></div><div class="slide"><blockquote>“Montážníci po sobě uklidili, vše dle smlouvy.”<footer>— Irena, Říčany</footer></blockquote></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="steps">
-    <div class="container">
-      <h2 class="section__title">Jak postupujeme</h2>
-      <ol class="steps">
-        <li><strong>Poptávka.</strong> Zanecháte kontakt — voláme do 10 minut.</li><li><strong>Zaměření.</strong> Technik přijede v domluveném čase a poradí.</li><li><strong>Výroba.</strong> Zakázka na míru — 3–7 pracovních dní.</li><li><strong>Montáž.</strong> Precizní instalace a odvoz odpadu.</li><li><strong>Záruka.</strong> 5 let na výrobky i montáž.</li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section section--alt" id="contact">
-    <div class="container contact">
-      <div class="contact__info">
-        <h2 class="section__title">Kontaktujte nás</h2>
-        <p>Zavolejte nebo odešlete poptávku — poradíme a připravíme cenovou nabídku.</p>
-        <p><a class="link-phone" href="tel:+420800000000">+420 800 000 000</a><br>
-        Praha, Ukázková 1</p>
-      </div>
-      <form class="contact__form" onsubmit="event.preventDefault(); alert('Poptávka byla odeslána!');">
-        <label>Jméno
-          <input type="text" required placeholder="Vaše jméno">
-        </label>
-        <label>Telefon
-          <input type="tel" required placeholder="+420 ___ ___ ___">
-        </label>
-        <label>Zpráva
-          <textarea rows="4" placeholder="Stručně popište zakázku"></textarea>
-        </label>
-        <button class="btn btn--primary btn--lg" type="submit">Odeslat poptávku</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer__grid">
-      <div>
-        <a class="logo logo--footer" href="#">
-          <span class="logo__icon" aria-hidden="true">🪟</span>
-          <span class="logo__text">OknaPro</span>
-        </a>
-        <p class="muted">© 2025 OknaPro. Všechna práva vyhrazena.</p>
-      </div>
-      <div>
-        <h4>Služby</h4>
-        <ul class="list">
-          <li><a href="#services">Služby</a></li>
-          <li><a href="#calc">Kalkulace</a></li>
-          <li><a href="#gallery">Realizace</a></li>
-          <li><a href="#contact">Kontakty</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Dokumenty</h4>
-        <ul class="list">
-          <li><a href="#">Zásady ochrany osobních údajů</a></li>
-          <li><a href="#">Obchodní podmínky</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-  <button class="scrolltop" id="scrolltop" aria-label="Nahoru">↑</button>
-
-  <div class="sr-only" id="sr-live" aria-live="polite"></div>
-</body>
-</html>
+        <img src="
