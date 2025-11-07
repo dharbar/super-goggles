@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -76,10 +77,16 @@
         </ul>
       </nav>
       <a class="btn btn--sm btn--primary" href="#calc">Безкоштовний розрахунок</a>
-      <div class="lang-switch">
-        <button data-lang="cs" class="">CZ</button>
-        <button data-lang="ua" class="active">UA</button>
-        <button data-lang="ru" class="">RU</button>
+      <div class="language-switcher">
+        <button class="lang-toggle" aria-expanded="false" aria-controls="lang-list">
+          <span class="lang-current">UA</span>
+          <span class="lang-arrow" aria-hidden="true">▼</span>
+        </button>
+        <ul class="lang-list" id="lang-list">
+          <li><a href="index.html" data-lang="cs" class="lang-item">Česky (CZ)</a></li>
+          <li><a href="index-ua.html" data-lang="ua" class="lang-item active">Українська (UA)</a></li>
+          <li><a href="index-ru.html" data-lang="ru" class="lang-item">Русский (RU)</a></li>
+        </ul>
       </div>
     </div>
   </header>
@@ -115,7 +122,7 @@
     <div class="container">
       <h2 class="section__title">Послуги</h2>
       <div class="grid grid--3">
-        <article class="service"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1200&auto=format&fit=crop" alt="Пластикові вікна"><h3>Пластикові вікна</h3><p>Профілі класу A, склопакети 32–40 мм, преміум фурнітура.</p></article><article class="service"><img src="Gemini_Generated_Image_nt7q0qnt7q0qnt7q.png" alt="Балкони та лоджії"><h3>Балкони та лоджії</h3><p>Засклення, утеплення, винос, дахи та оздоблення «під ключ».</p></article><article class="service"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Двері ПВХ"><h3>Двері ПВХ</h3><p>Вхідні групи, міжкімнатні та розсувні системи.</p></article>
+        <article class="service"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1200&auto=format&fit=crop" alt="Пластикові вікна"><h3>Пластикові вікна</h3><p>Профілі класу A, склопакети 32–40 мм, преміум фурнітура.</p></article><article class="service"><img src="balcony_service.jpg" alt="Балкони та лоджії"><h3>Балкони та лоджії</h3><p>Засклення, утеплення, винос, дахи та оздоблення «під ключ».</p></article><article class="service"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Двері ПВХ"><h3>Двері ПВХ</h3><p>Вхідні групи, міжкімнатні та розсувні системи.</p></article>
       </div>
     </div>
   </section>
