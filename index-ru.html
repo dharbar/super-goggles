@@ -76,10 +76,16 @@
         </ul>
       </nav>
       <a class="btn btn--sm btn--primary" href="#calc">Бесплатный расчёт</a>
-      <div class="lang-switch">
-        <button data-lang="cs" class="">CZ</button>
-        <button data-lang="ua" class="">UA</button>
-        <button data-lang="ru" class="active">RU</button>
+      <div class="language-switcher">
+        <button class="lang-toggle" aria-expanded="false" aria-controls="lang-list">
+          <span class="lang-current">RU</span>
+          <span class="lang-arrow" aria-hidden="true">▼</span>
+        </button>
+        <ul class="lang-list" id="lang-list">
+          <li><a href="index.html" data-lang="cs" class="lang-item">Česky (CZ)</a></li>
+          <li><a href="index-ua.html" data-lang="ua" class="lang-item">Українська (UA)</a></li>
+          <li><a href="index-ru.html" data-lang="ru" class="lang-item active">Русский (RU)</a></li>
+        </ul>
       </div>
     </div>
   </header>
@@ -115,7 +121,7 @@
     <div class="container">
       <h2 class="section__title">Услуги</h2>
       <div class="grid grid--3">
-        <article class="service"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1200&auto=format&fit=crop" alt="Пластиковые окна"><h3>Пластиковые окна</h3><p>Профили класса А, стеклопакеты 32–40 мм, фурнитура премиум.</p></article><article class="service"><img src="Gemini_Generated_Image_nt7q0qnt7q0qnt7q.png" alt="Балконы и лоджии"><h3>Балконы и лоджии</h3><p>Остекление, утепление, вынос, крыши и отделка «под ключ».</p></article><article class="service"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Двери ПВХ"><h3>Двери ПВХ</h3><p>Входные группы, межкомнатные и раздвижные системы.</p></article>
+        <article class="service"><img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=1200&auto=format&fit=crop" alt="Пластиковые окна"><h3>Пластиковые окна</h3><p>Профили класса А, стеклопакеты 32–40 мм, фурнитура премиум.</p></article><article class="service"><img src="balcony_service.jpg" alt="Балконы и лоджии"><h3>Балконы и лоджии</h3><p>Остекление, утепление, вынос, крыши и отделка «под ключ».</p></article><article class="service"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Двери ПВХ"><h3>Двери ПВХ</h3><p>Входные группы, межкомнатные и раздвижные системы.</p></article>
       </div>
     </div>
   </section>
