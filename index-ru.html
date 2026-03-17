@@ -126,34 +126,34 @@
     </div>
   </section>
 
-  <section class="section section--alt" id="calc">
+ <section class="section section--alt" id="calc">
     <div class="container">
-      <h2 class="section__title">Быстрый расчёт</h2>
-      <form class="calc" onsubmit="event.preventDefault(); alert('Спасибо! Заявка отправлена.');">
+      <h2 class="section__title">Швидкий розрахунок</h2>
+      <form id="calc-form" class="calc">
         <div class="calc__row">
-          <label>Тип изделия
-            <select required>
-              <option value="">Выберите...</option>
-              <option>Окно</option>
-              <option>Балконный блок</option>
-              <option>Дверь</option>
+          <label>Тип виробу
+            <select id="calc-type" required>
+              <option value="">Оберіть…</option>
+              <option>Вікно</option>
+              <option>Балконний блок</option>
+              <option>Двері</option>
             </select>
           </label>
           <label>Ширина, мм
-            <input type="number" min="400" max="3000" placeholder="1200" required>
+            <input type="number" id="calc-width" min="400" max="3000" placeholder="1200" required>
           </label>
-          <label>Высота, мм
-            <input type="number" min="400" max="3000" placeholder="1400" required>
+          <label>Висота, мм
+            <input type="number" id="calc-height" min="400" max="3000" placeholder="1500" required>
           </label>
           <label>Телефон
-            <input type="tel" placeholder="+7 (___) ___-__-__" required>
+            <input type="tel" id="calc-phone" required placeholder="+420 ___ ___ ___">
           </label>
         </div>
-        <button type="submit" class="btn btn--primary btn--lg">Отправить</button>
+        <button type="submit" class="btn btn--primary btn--lg">Надіслати</button>
       </form>
     </div>
-  </section>
-
+  </section>  
+  
   <section class="section" id="gallery">
     <div class="container">
       <h2 class="section__title">Наши работы</h2>
@@ -191,21 +191,21 @@
       <div class="contact__info">
         <h2 class="section__title">Связаться с нами</h2>
         <p>Позвоните или оставьте заявку — проконсультируем и рассчитаем стоимость.</p>
-        <p><a class="link-phone" href="tel:+78000000000">+7 (800) 000-00-00</a><br>
+        <p><a class="link-phone" href="tel:+420000000000">+420 000 000 000</a><br>
         Москва, пр-т Примерный, 1</p>
       </div>
-      <form class="contact__form" onsubmit="event.preventDefault(); alert('Спасибо! Заявка отправлена.');">
-        <label>Имя
-          <input type="text" required placeholder="Ваше имя">
-        </label>
-        <label>Телефон
-          <input type="tel" required placeholder="+7 (___) ___-__-__">
-        </label>
-        <label>Комментарий
-          <textarea rows="4" placeholder="Опишите задачу"></textarea>
-        </label>
-        <button class="btn btn--primary btn--lg" type="submit">Отправить заявку</button>
-      </form>
+      <form id="tg-form" class="contact__form">
+  <label>Jméno
+    <input type="text" id="name" required placeholder="Ваше имя">
+  </label>
+  <label>Телефон
+    <input type="tel" id="phone" required placeholder="+420 ___ ___ ___">
+  </label>
+  <label>Zpráva
+    <textarea id="message" rows="4" placeholder="Описание задачи"></textarea>
+  </label>
+  <button class="btn btn--primary btn--lg" type="submit">Odeslat</button>
+</form>
     </div>
   </section>
 
@@ -241,3 +241,4 @@
   <div class="sr-only" id="sr-live" aria-live="polite"></div>
 </body>
 </html>
+
