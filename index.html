@@ -126,30 +126,30 @@
     </div>
   </section>
 
-  <section class="section section--alt" id="calc">
+   <section class="section section--alt" id="calc">
     <div class="container">
-      <h2 class="section__title">Rychlá kalkulace</h2>
-      <form class="calc" onsubmit="event.preventDefault(); alert('Poptávka byla odeslána!');">
+      <h2 class="section__title">Швидкий розрахунок</h2>
+      <form id="calc-form" class="calc">
         <div class="calc__row">
-          <label>Typ výrobku
-            <select required>
-              <option value="">Vyberte…</option>
-              <option>Okno</option>
-              <option>Balkonový blok</option>
-              <option>Dveře</option>
+          <label>Тип виробу
+            <select id="calc-type" required>
+              <option value="">Оберіть…</option>
+              <option>Вікно</option>
+              <option>Балконний блок</option>
+              <option>Двері</option>
             </select>
           </label>
-          <label>Šířka, mm
-            <input type="number" min="400" max="3000" placeholder="1200" required>
+          <label>Ширина, мм
+            <input type="number" id="calc-width" min="400" max="3000" placeholder="1200" required>
           </label>
-          <label>Výška, mm
-            <input type="number" min="400" max="3000" placeholder="1400" required>
+          <label>Висота, мм
+            <input type="number" id="calc-height" min="400" max="3000" placeholder="1500" required>
           </label>
-          <label>Telefon
-            <input type="tel" placeholder="+420 ___ ___ ___" required>
+          <label>Телефон
+            <input type="tel" id="calc-phone" required placeholder="+420 ___ ___ ___">
           </label>
         </div>
-        <button type="submit" class="btn btn--primary btn--lg">Odeslat</button>
+        <button type="submit" class="btn btn--primary btn--lg">Надіслати</button>
       </form>
     </div>
   </section>
@@ -191,21 +191,21 @@
       <div class="contact__info">
         <h2 class="section__title">Kontaktujte nás</h2>
         <p>Zavolejte nebo odešlete poptávku — poradíme a připravíme cenovou nabídku.</p>
-        <p><a class="link-phone" href="tel:+420800000000">+420 800 000 000</a><br>
+        <p><a class="link-phone" href="tel:+420000000000">+420 000 000 000</a><br>
         Praha, Ukázková 1</p>
       </div>
-      <form class="contact__form" onsubmit="event.preventDefault(); alert('Poptávka byla odeslána!');">
-        <label>Jméno
-          <input type="text" required placeholder="Vaše jméno">
-        </label>
-        <label>Telefon
-          <input type="tel" required placeholder="+420 ___ ___ ___">
-        </label>
-        <label>Zpráva
-          <textarea rows="4" placeholder="Stručně popište zakázku"></textarea>
-        </label>
-        <button class="btn btn--primary btn--lg" type="submit">Odeslat poptávku</button>
-      </form>
+      <form id="tg-form" class="contact__form">
+  <label>Jméno
+    <input type="text" id="name" required placeholder="Ваше имя">
+  </label>
+  <label>Телефон
+    <input type="tel" id="phone" required placeholder="+420 ___ ___ ___">
+  </label>
+  <label>Zpráva
+    <textarea id="message" rows="4" placeholder="Описание задачи"></textarea>
+  </label>
+  <button class="btn btn--primary btn--lg" type="submit">Odeslat</button>
+</form>
     </div>
   </section>
 
@@ -241,3 +241,4 @@
   <div class="sr-only" id="sr-live" aria-live="polite"></div>
 </body>
 </html>
+
