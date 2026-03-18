@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollTop = document.getElementById('scrolltop');
   const live      = document.getElementById('sr-live');
 
-  // Existing Nav Toggle Logic
+  // --- НАВИГАЦИЯ ---
   if (navToggle) {
     navToggle.addEventListener('click', () => {
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll to top button
+  // --- КНОПКА ВВЕРХ ---
   if (scrollTop) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 400) scrollTop.classList.add('show');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
   }
 
-  // Smooth anchor scrolling
+  // --- ПЛАВНЫЙ СКРОЛЛ ПО ЯКОРЯМ ---
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href').slice(1);
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- NEW LANGUAGE SWITCHER LOGIC ---
+  // --- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ---
   const langToggle = document.querySelector('.lang-toggle');
   const langList = document.querySelector('.lang-list');
   const langSwitcher = document.querySelector('.language-switcher');
@@ -56,11 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     langToggle.addEventListener('click', toggleLangMenu);
 
     document.addEventListener('click', function(event) {
-        if (langSwitcher) {
-            const isClickInside = langSwitcher.contains(event.target);
-            if (!isClickInside && langList.classList.contains('is-open')) {
-                toggleLangMenu(); 
-            }
+        if (langSwitcher && !langSwitcher.contains(event.target) && langList.classList.contains('is-open')) {
+            toggleLangMenu(); 
         }
     });
   }
@@ -69,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', e => {
       e.preventDefault(); 
       const lang = a.dataset.lang;
-      if (lang === 'cs') window.location.href = 'index.html';
+      if (lang === 'cs') window.location.href = 'index-cz.html';
       if (lang === 'ua') window.location.href = 'index-ua.html';
       if (lang === 'ru') window.location.href = 'index-ru.html';
     });
@@ -81,38 +78,87 @@ const TOKEN = "8670035107:AAFqfKPaHcYkPJbc6riW5e0pwaICzBlbP34";
 const CHAT_ID = "923191360";
 const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
-// Универсальный обработчик отправки форм
+// --- УНИВЕРСАЛЬНЫЙ ОБРАБОТЧИК ОТПРАВКИ ФОРМ ---
 document.addEventListener('submit', function(e) {
     const form = e.target;
     
+    // Проверяем, что это одна из наших форм
     if (form.id === 'tg-form' || form.id === 'calc-form') {
         e.preventDefault();
 
+        // 1. Определение языка для уведомлений
+        const pageLang = document.documentElement.lang || 'cs';
+        
+        const i18n = {
+            cs: {
+                errorPhone: 'Prosím, zadejte platné telefonní číslo (alespoň 9 číslic).',
+                sending: 'Odesílání...',
+                success: 'Děkujeme! Žádost byla odeslána.',
+                serverError: 'Chyba serveru. Zkuste to později.',
+                netError: 'Chyba sítě. Zkontrolujte připojení.'
+            },
+            ru: {
+                errorPhone: 'Пожалуйста, введите корректный номер телефона (минимум 9 цифр).',
+                sending: 'Отправка...',
+                success: 'Спасибо! Заявка отправлена.',
+                serverError: 'Ошибка сервера. Попробуйте позже.',
+                netError: 'Ошибка сети. Проверьте интернет.'
+            },
+            uk: {
+                errorPhone: 'Будь ласка, введіть коректний номер телефону (мінімум 9 цифр).',
+                sending: 'Надсилання...',
+                success: 'Дякуємо! Заявка відправлена.',
+                serverError: 'Помилка сервера. Спробуйте пізніше.',
+                netError: 'Помилка мережі. Перевірте інтернет.'
+            }
+        };
+
+        const t = i18n[pageLang] || i18n.cs;
+
+        // 2. Валидация телефона
+        const phoneInput = form.querySelector('input[type="tel"]');
+        if (phoneInput) {
+            const phoneValue = phoneInput.value.replace(/\D/g, ''); 
+            if (phoneValue.length < 9) {
+                alert(t.errorPhone);
+                return;
+            }
+        }
+
+        // 3. Подготовка индикации загрузки
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = t.sending;
+
+        // 4. Сбор сообщения для Telegram
         let message = "";
 
         if (form.id === 'tg-form') {
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const userMsg = document.getElementById('message').value || "Без сообщения";
+            const name = form.querySelector('#name').value;
+            const phone = form.querySelector('#phone').value;
+            const userMsg = form.querySelector('#message').value || "—";
 
-            message = `<b>🚀 Новая заявка (Контакты)!</b>\n`;
+            message = `<b>🚀 Новая заявка (Контакты)</b>\n`;
             message += `<b>Имя:</b> ${name}\n`;
             message += `<b>Телефон:</b> ${phone}\n`;
             message += `<b>Сообщение:</b> ${userMsg}`;
         }
 
         if (form.id === 'calc-form') {
-            const type = document.getElementById('calc-type').value;
-            const width = document.getElementById('calc-width').value;
-            const height = document.getElementById('calc-height').value;
-            const phone = document.getElementById('calc-phone').value;
+            const type = form.querySelector('#calc-type').value;
+            const width = form.querySelector('#calc-width').value;
+            const height = form.querySelector('#calc-height').value;
+            const phone = form.querySelector('#calc-phone').value;
 
-            message = `<b>🧮 Новый расчёт (Калькулятор)!</b>\n`;
+            message = `<b>🧮 Новый расчёт (Калькулятор)</b>\n`;
             message += `<b>Тип:</b> ${type}\n`;
             message += `<b>Размеры:</b> ${width} x ${height} мм\n`;
             message += `<b>Телефон:</b> ${phone}`;
         }
 
+        // 5. Отправка через Fetch
         fetch(URL_API, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -124,15 +170,20 @@ document.addEventListener('submit', function(e) {
         })
         .then(response => {
             if (response.ok) {
-                alert('Спасибо! Заявка отправлена в Telegram.');
+                alert(t.success);
                 form.reset(); 
             } else {
-                alert('Ошибка сервера. Проверьте настройки бота.');
+                alert(t.serverError);
             }
         })
         .catch(error => {
-            console.error('Ошибка:', error);
-            alert('Ошибка сети. Проверьте интернет.');
+            console.error('API Error:', error);
+            alert(t.netError);
+        })
+        .finally(() => {
+            // Возвращаем кнопку в исходное состояние
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
         });
     }
 });
