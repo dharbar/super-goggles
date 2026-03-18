@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', e => {
       e.preventDefault(); 
       const lang = a.dataset.lang;
-      if (lang === 'cs') window.location.href = 'index-cz.html';
+      if (lang === 'cs') window.location.href = 'index.html';
       if (lang === 'ua') window.location.href = 'index-ua.html';
       if (lang === 'ru') window.location.href = 'index-ru.html';
     });
