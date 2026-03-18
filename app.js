@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (lang === 'ru') window.location.href = 'index-ru.html';
     });
   });
-});
 
 // --- ДАННЫЕ TELEGRAM ---
 const TOKEN = "8670035107:AAFqfKPaHcYkPJbc6riW5e0pwaICzBlbP34";
