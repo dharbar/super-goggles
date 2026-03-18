@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OknaPro — Okna a dveře na klíč</title>
-  <meta name="description" content="Moderní/Сучасні/Современные okna a dveře: zaměření/vymír, výroba, montáž.">
+  <meta name="description" content="Moderní okna a dveře: zaměření, výroba, montáž.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
     "@type": "LocalBusiness",
     "name": "OknaPro",
     "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
-    "telephone": "+420 800 000 000",
+    "telephone": "+420 000 000 000",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Praha",
@@ -126,40 +126,44 @@
     </div>
   </section>
 
-  <section class="section section--alt" id="calc">
-  <div class="container">
-    <h2 class="section__title">Rychlá kalkulace</h2>
-    <form id="calc-form" class="calc">
-      <div class="calc__row">
-        <label>Typ výrobku
-          <select id="calc-type" required> <option value="">Vyberte…</option>
-            <option>Okno</option>
-            <option>Balkonový blok</option>
-            <option>Dveře</option>
-          </select>
-        </label>
-        <label>Šířka, mm
-          <input type="number" id="calc-width" min="400" max="3000" placeholder="1200" required> </label>
-        <label>Výška, mm
-          <input type="number" id="calc-height" min="400" max="3000" placeholder="1500" required> </label>
-        <label>Telefon
-          <input type="tel" id="calc-phone" required placeholder="+420 ___ ___ ___"> </label>
-      </div>
-      <button type="submit" class="btn btn--primary btn--lg">Odeslat</button>
-    </form>
-  </div>
-</section>
+   <section class="section section--alt" id="calc">
+    <div class="container">
+      <h2 class="section__title">Rychlá kalkulace</h2>
+      <form id="calc-form" class="calc">
+        <div class="calc__row">
+          <label>Typ výrobku
+            <select id="calc-type" required>
+              <option value="">Vyberte…</option>
+              <option>Okno</option>
+              <option>Balkonový komplet</option>
+              <option>Dveře</option>
+            </select>
+          </label>
+          <label>Šířka, mm
+            <input type="number" id="calc-width" min="400" max="3000" placeholder="1200" required>
+          </label>
+          <label>Výška, mm
+            <input type="number" id="calc-height" min="400" max="3000" placeholder="1500" required>
+          </label>
+          <label>Telefon
+            <input type="tel" id="calc-phone" required placeholder="+420 ___ ___ ___">
+          </label>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg">Odeslat</button>
+      </form>
+    </div>
+  </section>
 
   <section class="section" id="gallery">
     <div class="container">
       <h2 class="section__title">Naše realizace</h2>
       <div class="masonry">
-      <img src="dver.jpg" alt="1. Современная гостиная с панорамными окнами">
-      <img src="kuchna .jpg" alt="2. Большие раздвижные двери, ведущие на балкон">
-      <img src=" oknobig.jpg" alt="3. Кухонное окно с видом на город">
-      <img src="spalna .jpg" alt="4. Рабочее место у окна в светлой комнате">
-      <img src="unnamed.jpg" alt="5. Спальня с высоким окном">
-      <img src="hala.jpg" alt="6. Современная входная дверь">
+      <img src="dver.jpg" alt="1. Moderní obývací pokoj s panoramatickými okny">
+      <img src="kuchna .jpg" alt="2. Velké posuvné dveře vedoucí na balkon">
+      <img src=" oknobig.jpg" alt="3. Kuchyňské okno s výhledem na město">
+      <img src="spalna .jpg" alt="4. Pracovní místo u okna ve světlém pokoji">
+      <img src="unnamed.jpg" alt="5. Ložnice s vysokým oknem">
+      <img src="hala.jpg" alt="6. Moderní vchodové dveře">
       </div>
     </div>
   </section>
@@ -192,13 +196,13 @@
       </div>
       <form id="tg-form" class="contact__form">
   <label>Jméno
-    <input type="text" id="name" required placeholder="Ваше имя">
+    <input type="text" id="name" required placeholder="Vaše jméno">
   </label>
-  <label>Телефон
+  <label>Telefon
     <input type="tel" id="phone" required placeholder="+420 ___ ___ ___">
   </label>
   <label>Zpráva
-    <textarea id="message" rows="4" placeholder="Описание задачи"></textarea>
+    <textarea id="message" rows="4" placeholder="Popis poptávky"></textarea>
   </label>
   <button class="btn btn--primary btn--lg" type="submit">Odeslat</button>
 </form>
@@ -237,4 +241,3 @@
   <div class="sr-only" id="sr-live" aria-live="polite"></div>
 </body>
 </html>
-
