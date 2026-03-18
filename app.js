@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollTop = document.getElementById('scrolltop');
   const live      = document.getElementById('sr-live');
 
-  // --- НАВИГАЦИЯ ---
-  if (navToggle) {
+  // --- НАВИГАЦИЯ (Мобильное меню) ---
+  if (navToggle && navList) {
     navToggle.addEventListener('click', () => {
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!expanded));
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ ---
+  // --- ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКОВ (Dropdown) ---
   const langToggle = document.querySelector('.lang-toggle');
   const langList = document.querySelector('.lang-list');
   const langSwitcher = document.querySelector('.language-switcher');
@@ -53,27 +53,33 @@ document.addEventListener('DOMContentLoaded', () => {
         langList.classList.toggle('is-open');
     }
 
-    langToggle.addEventListener('click', toggleLangMenu);
+    langToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleLangMenu();
+    });
 
-    document.addEventListener('click', function(event) {
+    document.addEventListener('click', (event) => {
         if (langSwitcher && !langSwitcher.contains(event.target) && langList.classList.contains('is-open')) {
             toggleLangMenu(); 
         }
     });
   }
 
+  // Логика перехода по языкам
   document.querySelectorAll('.lang-item').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault(); 
       const lang = a.dataset.lang;
-      if (lang === 'cs') window.location.href = 'index.html';
+      if (lang === 'cs') window.location.href = 'index.html'; // Исправлено на index.html
       if (lang === 'ua') window.location.href = 'index-ua.html';
       if (lang === 'ru') window.location.href = 'index-ru.html';
     });
   });
 
-// --- ДАННЫЕ TELEGRAM ---
-const TOKEN = "8670035107:AAFqfKPaHcYkPJbc6riW5e0pwaICzBlbP34";
+}); // Конец блока DOMContentLoaded
+
+// --- ДАННЫЕ TELEGRAM (ВАЖНО: Замените TOKEN на новый из BotFather!) ---
+const TOKEN = "8670035107:AAFqfKPaHcYkPJbc6riW5e0pwaICzBlbP34"; 
 const CHAT_ID = "923191360";
 const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
@@ -81,19 +87,16 @@ const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 document.addEventListener('submit', function(e) {
     const form = e.target;
     
-    // Проверяем, что это одна из наших форм
     if (form.id === 'tg-form' || form.id === 'calc-form') {
         e.preventDefault();
 
-        // 1. Определение языка для уведомлений
         const pageLang = document.documentElement.lang || 'cs';
-        
         const i18n = {
             cs: {
                 errorPhone: 'Prosím, zadejte platné telefonní číslo (alespoň 9 číslic).',
                 sending: 'Odesílání...',
                 success: 'Děkujeme! Žádost byla odeslána.',
-                serverError: 'Chyba serveru. Zkuste to později.',
+                serverError: 'Chyba serveru. Zkuste то později.',
                 netError: 'Chyba sítě. Zkontrolujte připojení.'
             },
             ru: {
@@ -114,7 +117,6 @@ document.addEventListener('submit', function(e) {
 
         const t = i18n[pageLang] || i18n.cs;
 
-        // 2. Валидация телефона
         const phoneInput = form.querySelector('input[type="tel"]');
         if (phoneInput) {
             const phoneValue = phoneInput.value.replace(/\D/g, ''); 
@@ -124,14 +126,12 @@ document.addEventListener('submit', function(e) {
             }
         }
 
-        // 3. Подготовка индикации загрузки
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.textContent;
         
         submitBtn.disabled = true;
         submitBtn.textContent = t.sending;
 
-        // 4. Сбор сообщения для Telegram
         let message = "";
 
         if (form.id === 'tg-form') {
@@ -157,7 +157,6 @@ document.addEventListener('submit', function(e) {
             message += `<b>Телефон:</b> ${phone}`;
         }
 
-        // 5. Отправка через Fetch
         fetch(URL_API, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -180,7 +179,6 @@ document.addEventListener('submit', function(e) {
             alert(t.netError);
         })
         .finally(() => {
-            // Возвращаем кнопку в исходное состояние
             submitBtn.disabled = false;
             submitBtn.textContent = originalBtnText;
         });
