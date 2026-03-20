@@ -70,15 +70,58 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', e => {
       e.preventDefault(); 
       const lang = a.dataset.lang;
-      if (lang === 'cs') window.location.href = 'index.html'; // Исправлено на index.html
+      if (lang === 'cs') window.location.href = 'index.html';
       if (lang === 'ua') window.location.href = 'index-ua.html';
       if (lang === 'ru') window.location.href = 'index-ru.html';
     });
   });
 
+  // --- ОБОРАЧИВАЕМ КАРТИНКИ УСЛУГ ДЛЯ ZOOM-АНИМАЦИИ ---
+  // Без этого overflow:hidden на .service не даёт нужного эффекта при scale
+  document.querySelectorAll('.service img').forEach(img => {
+    if (!img.parentElement.classList.contains('service__img-wrap')) {
+      const wrap = document.createElement('div');
+      wrap.className = 'service__img-wrap';
+      img.parentNode.insertBefore(wrap, img);
+      wrap.appendChild(img);
+    }
+  });
+
+  // --- SCROLL-REVEAL — плавное появление элементов ---
+  const revealTargets = [
+    '.card',
+    '.service',
+    '.slide',
+    '.steps li',
+    '.masonry img',
+    '.hero__content',
+    '.hero__media',
+    '.section__title',
+    '.calc',
+    '.contact__form',
+    '.contact__info',
+  ];
+
+  const allReveal = document.querySelectorAll(revealTargets.join(', '));
+  allReveal.forEach(el => el.classList.add('reveal'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // срабатывает только один раз
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  allReveal.forEach(el => observer.observe(el));
+
 }); // Конец блока DOMContentLoaded
 
-// --- ДАННЫЕ TELEGRAM (ВАЖНО: Замените TOKEN на новый из BotFather!) ---
+// --- ДАННЫЕ TELEGRAM ---
 const TOKEN = "8670035107:AAFqfKPaHcYkPJbc6riW5e0pwaICzBlbP34"; 
 const CHAT_ID = "923191360";
 const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
